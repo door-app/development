@@ -14,4 +14,15 @@ services:
       - "8080:8080"
     command:
       - "fresh"
-
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: door
+      MYSQL_USER: root
+      MYSQL_PASSWORD: pass
