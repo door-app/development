@@ -4,3 +4,5 @@
 web:
 	cd proxy && docker-compose up -d && \
 	cd ../../door-web && npm run dev
+stop_web:
+	cd proxy && docker-compose stop
